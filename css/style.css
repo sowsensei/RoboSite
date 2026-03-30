@@ -676,6 +676,63 @@ footer hr { border-color: rgba(255,255,255,0.1); }
 .text-primary-custom { color: var(--color-primary) !important; }
 .bg-dark-custom { background-color: var(--color-dark); }
 
+/* ─── Gallery ────────────────────────────────────────────── */
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  background: #e9ecef;
+  aspect-ratio: 1;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  color: #fff;
+  font-size: 0.82rem;
+  padding: 1.5rem 0.75rem 0.5rem;
+}
+
+/* ─── Enroll steps (Как записаться) ─────────────────────── */
+.enroll-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,180,216,0.3);
+  margin-bottom: 1rem;
+}
+.enroll-hint {
+  background: var(--color-light);
+  border: 1px solid #dce5ef;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+.enroll-hint-icon { font-size: 1.4rem; flex-shrink: 0; }
+
 /* ─── Responsive ────────────────────────────────────────── */
 @media (max-width: 768px) {
   .hero { padding: 60px 0 50px; }
