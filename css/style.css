@@ -1,0 +1,580 @@
+:root {
+  --color-dark: #0d1b2a;
+  --color-primary: #00b4d8;
+  --color-primary-dark: #0077a8;
+  --color-light: #f4f8fb;
+  --color-white: #ffffff;
+  --radius: 10px;
+}
+
+/* ─── Base ─────────────────────────────────────────────── */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-light);
+  color: #212529;
+}
+
+a { color: var(--color-primary-dark); }
+a:hover { color: var(--color-primary); }
+
+/* ─── Navbar ────────────────────────────────────────────── */
+.navbar {
+  background-color: var(--color-dark) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.navbar-brand {
+  color: var(--color-primary) !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+/* "Главная" в бренде — выглядит как обычная nav-ссылка */
+.navbar-brand.home-link {
+  color: rgba(255,255,255,0.85) !important;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+.navbar-brand.home-link:hover {
+  color: var(--color-primary) !important;
+}
+.navbar-nav .nav-link {
+  color: rgba(255,255,255,0.8) !important;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--color-primary) !important;
+}
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.3);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ─── Hero ──────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--color-dark) 0%, #1a3a5c 100%);
+  color: #fff;
+  padding: 90px 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: rgba(0,180,216,0.07);
+  pointer-events: none;
+}
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.hero .subtitle {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+}
+.hero .lead {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.1rem;
+}
+.hero .accent { color: var(--color-primary); }
+
+/* ─── Page header (inner pages) ────────────────────────── */
+.page-header {
+  background: linear-gradient(135deg, var(--color-dark) 0%, #1a3a5c 100%);
+  color: #fff;
+  padding: 60px 0 50px;
+}
+.page-header h1 { font-weight: 800; }
+.page-header .lead { color: rgba(255,255,255,0.75); }
+.page-header .badge-section {
+  background: rgba(0,180,216,0.2);
+  color: var(--color-primary);
+  border: 1px solid rgba(0,180,216,0.4);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  padding: 0.35em 0.8em;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── Section ───────────────────────────────────────────── */
+.section { padding: 60px 0; }
+.section-alt { background-color: #fff; }
+
+.section-title {
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 3px;
+  background: var(--color-primary);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* ─── Cards ─────────────────────────────────────────────── */
+.card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+.card-icon {
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+.card-title { font-weight: 700; }
+
+/* Feature cards on main page */
+.feature-card { border-top: 3px solid var(--color-primary); }
+
+/* ─── Timeline ──────────────────────────────────────────── */
+.timeline-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.timeline-item {
+  flex: 1;
+  min-width: 160px;
+  max-width: 240px;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  position: relative;
+}
+.timeline-item:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -12px;
+  top: 28px;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.timeline-num {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.6rem;
+  box-shadow: 0 4px 12px rgba(0,180,216,0.3);
+}
+.timeline-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-dark);
+}
+.timeline-desc {
+  font-size: 0.82rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* ─── Track steps (путь обучения — два трека) ───────────── */
+.track-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.track-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #e8edf2;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.track-step-future {
+  opacity: 0.6;
+  border-style: dashed;
+}
+.track-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.track-step-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-dark);
+  margin-bottom: 4px;
+}
+.track-step-desc {
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.45;
+}
+.track-arrow {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #bbb;
+  line-height: 1;
+  padding: 4px 0;
+}
+
+/* ─── Token badge ───────────────────────────────────────── */
+.token-reward {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  border: 1.5px solid #f0c040;
+  border-radius: 20px;
+  padding: 4px 10px 4px 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #b8860b;
+  white-space: nowrap;
+}
+.token-reward img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.token-reward-lg {
+  font-size: 0.9rem;
+  padding: 6px 14px 6px 8px;
+}
+.token-reward-lg img {
+  width: 26px;
+  height: 26px;
+}
+/* Блок системы вознаграждений */
+.reward-system-block {
+  background: linear-gradient(135deg, #fffbf0, #fff8e1);
+  border: 2px solid #f0c040;
+  border-radius: 14px;
+  padding: 28px 32px;
+}
+.reward-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px dashed #e8d88a;
+}
+.reward-step:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.reward-step-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+.reward-step-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  margin-bottom: 2px;
+}
+.reward-step-desc {
+  font-size: 0.82rem;
+  color: #666;
+}
+/* Таблица токенов в задачах */
+.task-tokens-board {
+  background: #fff;
+  border: 1.5px solid #e8edf2;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.task-tokens-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid #f0f4f8;
+  gap: 12px;
+}
+.task-tokens-row:last-child { border-bottom: none; }
+.task-tokens-row-title {
+  font-size: 0.9rem;
+  color: #333;
+  flex: 1;
+}
+
+/* ─── PDF embed ─────────────────────────────────────────── */
+.pdf-embed-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.pdf-embed {
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  border: none;
+  display: block;
+}
+
+/* ─── Video embed ───────────────────────────────────────── */
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #0d1b2a;
+}
+.video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.video-placeholder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  gap: 0.5rem;
+}
+.video-placeholder .play-icon { font-size: 2.5rem; opacity: 0.4; }
+
+/* ─── Download buttons ──────────────────────────────────── */
+.btn-download {
+  background-color: var(--color-dark);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn-download:hover { background: var(--color-primary-dark); color: #fff; }
+.btn-download.pdf { background-color: #c0392b; }
+.btn-download.pdf:hover { background-color: #a93226; }
+.btn-download.ev3 { background-color: #16a085; }
+.btn-download.ev3:hover { background-color: #138d75; }
+.btn-download.zip { background-color: #7d3c98; }
+.btn-download.zip:hover { background-color: #6c3483; }
+.btn-download.msi { background-color: #1a5276; }
+.btn-download.msi:hover { background-color: #154360; }
+
+/* ─── Accordion ─────────────────────────────────────────── */
+.accordion-button:not(.collapsed) {
+  background-color: #e8f7fc;
+  color: var(--color-dark);
+  box-shadow: none;
+}
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0,180,216,0.25);
+}
+.accordion-button { font-weight: 600; }
+
+/* ─── Model card (LEGO) ─────────────────────────────────── */
+.model-card .card-body { padding: 1rem 1.1rem; }
+.model-card .card-title { font-size: 1rem; margin-bottom: 0.4rem; }
+.model-card .downloads { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+
+/* ─── Software download box ─────────────────────────────── */
+.software-box {
+  background: linear-gradient(135deg, var(--color-dark), #1a3a5c);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.software-box .sw-icon { font-size: 2.5rem; flex-shrink: 0; }
+.software-box .sw-title { font-weight: 700; font-size: 1.1rem; }
+.software-box .sw-desc { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+/* ─── Coming soon ───────────────────────────────────────── */
+.coming-soon {
+  background: linear-gradient(135deg, #2c3e50, #3d5a80);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.coming-soon .cs-icon { font-size: 4rem; margin-bottom: 1rem; display: block; }
+
+/* ─── Footer ────────────────────────────────────────────── */
+footer {
+  background-color: var(--color-dark);
+  color: rgba(255,255,255,0.6);
+  padding: 2.5rem 0 2rem;
+  margin-top: 4rem;
+}
+footer .footer-title {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+footer a:hover { color: var(--color-primary); }
+footer hr { border-color: rgba(255,255,255,0.1); }
+
+/* ─── Главные вкладки (Программа / Материалы) ──────────── */
+.main-tabs-bar {
+  background: #fff;
+  border-bottom: 2px solid #dee2e6;
+  position: sticky;
+  top: 56px; /* высота navbar */
+  z-index: 100;
+}
+.main-tabs {
+  gap: 0;
+  flex-wrap: nowrap;
+}
+.main-tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #6c757d;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -2px;
+}
+.main-tab-btn:hover {
+  color: var(--color-dark);
+}
+.main-tab-btn.active {
+  color: var(--color-dark);
+  border-bottom-color: var(--color-primary);
+}
+
+/* ─── Картинки-иконки в карточках ──────────────────────── */
+.card-icon-wrap {
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-subject-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.materials-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.materials-icon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.materials-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.materials-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* ─── Theory list (Scratch) ─────────────────────────────── */
+.theory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.theory-item {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.theory-item-body {
+  flex: 1;
+}
+.theory-item-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--color-dark);
+}
+.theory-item-desc {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+@media (max-width: 576px) {
+  .theory-item { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}
+
+/* ─── Utilities ─────────────────────────────────────────── */
+.text-primary-custom { color: var(--color-primary) !important; }
+.bg-dark-custom { background-color: var(--color-dark); }
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero { padding: 60px 0 50px; }
+  .hero h1 { font-size: 1.9rem; }
+  .timeline-item:not(:last-child)::after { display: none; }
+  .software-box { flex-direction: column; text-align: center; }
+}
+@media (max-width: 576px) {
+  .hero h1 { font-size: 1.6rem; }
+  .section { padding: 40px 0; }
+}

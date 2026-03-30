@@ -1,0 +1,23 @@
+# Claude Code
+.claude/
+
+# Видеофайлы (хранить отдельно, слишком большие для git)
+content/**/*.mp4
+content/**/*.avi
+content/**/*.mov
+content/**/*.mkv
+
+# Программы EV3 (бинарники, не нужны в репо)
+content/**/*.ev3
+content/**/*.lmsp
+content/**/*.msi
+
+# ОС
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Редакторы
+.vscode/
+*.swp
+*~

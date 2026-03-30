@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scratch — Кружок робототехники</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ─── Navbar ─────────────────────────────────────────── -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand home-link" href="index.html">Главная</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="scratch.html">Scratch</a></li>
+        <li class="nav-item"><a class="nav-link" href="lego.html">LEGO EV3</a></li>
+        <li class="nav-item"><a class="nav-link" href="print3d.html">3D Печать</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── Page Header ────────────────────────────────────── -->
+<section class="page-header">
+  <div class="container">
+    <span class="badge-section">Этап 1</span>
+    <h1>🐱 Scratch</h1>
+    <p class="lead">Первые шаги в программировании через визуальные блоки.<br>Создаём игры — учимся мыслить как разработчик.</p>
+  </div>
+</section>
+
+<!-- ─── Вкладки ───────────────────────────────────────── -->
+<div class="main-tabs-bar">
+  <div class="container">
+    <div class="d-flex main-tabs" role="tablist">
+      <button class="main-tab-btn active" id="tab-theory-btn" onclick="switchTab('theory')">📚 Теория и материалы</button>
+      <button class="main-tab-btn" id="tab-lessons-btn" onclick="switchTab('lessons')">🎮 Уроки</button>
+      <button class="main-tab-btn" id="tab-tasks-btn" onclick="switchTab('tasks')">🏆 Задачи</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Вкладка: Теория и материалы ────────────────────── -->
+<section class="section section-alt" id="tab-theory">
+  <div class="container">
+    <h2 class="section-title">Теория и материалы</h2>
+    <p class="text-muted mb-4">Презентации для изучения перед занятием или как справочник во время работы.</p>
+
+    <div class="theory-list">
+
+      <div class="theory-item">
+        <div class="theory-item-body">
+          <h5 class="theory-item-title">📐 Архитектура мышления</h5>
+          <p class="theory-item-desc">Как строить алгоритмы и структурировать решение задач. Основы алгоритмического мышления для начинающих.</p>
+        </div>
+        <a href="content/scratch/theory/architecture-thinking.pdf" class="btn-download pdf" target="_blank">📄 Открыть PDF</a>
+      </div>
+
+      <div class="theory-item">
+        <div class="theory-item-body">
+          <h5 class="theory-item-title">🏗️ Инженерия песочницы</h5>
+          <p class="theory-item-desc">Принципы создания игровых миров в Scratch: сцены, спрайты, взаимодействие объектов.</p>
+        </div>
+        <a href="content/scratch/theory/engineering-sandbox.pdf" class="btn-download pdf" target="_blank">📄 Открыть PDF</a>
+      </div>
+
+      <div class="theory-item">
+        <div class="theory-item-body">
+          <h5 class="theory-item-title">🎨 Scratch: искусство и анимация</h5>
+          <p class="theory-item-desc">Создание анимаций, работа с костюмами спрайтов и звуком. Как сделать проект красивым.</p>
+        </div>
+        <a href="content/scratch/theory/scratch-art.pdf" class="btn-download pdf" target="_blank">📄 Открыть PDF</a>
+      </div>
+
+      <div class="theory-item">
+        <div class="theory-item-body">
+          <h5 class="theory-item-title">🧠 Логика и архитектура Scratch</h5>
+          <p class="theory-item-desc">Переменные, условия, циклы, события. Как строить сложную логику из простых блоков.</p>
+        </div>
+        <a href="content/scratch/theory/scratch-logic.pdf" class="btn-download pdf" target="_blank">📄 Открыть PDF</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Вкладка: Уроки и задания ───────────────────────── -->
+<section class="section" id="tab-lessons" style="display:none;">
+  <div class="container">
+    <h2 class="section-title">Уроки</h2>
+    <p class="text-muted mb-4">Каждый урок — создание полноценной игры с нуля. Смотри видео, повторяй и покажи результат учителю.</p>
+
+    <div class="row g-4">
+
+      <!-- Урок 1 -->
+      <div class="col-lg-4">
+        <div class="card h-100">
+          <video controls class="w-100 rounded-top" style="background:#000;display:block;max-height:220px;">
+            <source src="content/scratch/lessons/01-geometry-dash/video.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <div class="text-muted small">Урок 1</div>
+              <span class="token-reward"><img src="assets/img/token.png" alt="токен">+1 токен</span>
+            </div>
+            <h5 class="card-title">Geometry Dash</h5>
+            <p class="text-muted small">Создаём клон знаменитой игры. Изучаем: движение, столкновения, перезапуск уровня.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 2 -->
+      <div class="col-lg-4">
+        <div class="card h-100">
+          <video controls class="w-100 rounded-top" style="background:#000;display:block;max-height:220px;">
+            <source src="content/scratch/lessons/02-flappy-bird/video.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <div class="text-muted small">Урок 2</div>
+              <span class="token-reward"><img src="assets/img/token.png" alt="токен">+1 токен</span>
+            </div>
+            <h5 class="card-title">Flappy Bird</h5>
+            <p class="text-muted small">Птица, трубы, гравитация. Изучаем: переменные, счёт, генерация препятствий.</p>
+            <div class="mt-3">
+              <a href="content/scratch/lessons/02-flappy-bird/assets.zip" class="btn-download zip" download>
+                📦 Материалы к уроку (.zip)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Урок 3 -->
+      <div class="col-lg-4">
+        <div class="card h-100">
+          <video controls class="w-100 rounded-top" style="background:#000;display:block;max-height:220px;">
+            <source src="content/scratch/lessons/03-arkanoid/video.mp4" type="video/mp4">
+          </video>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <div class="text-muted small">Урок 3</div>
+              <span class="token-reward"><img src="assets/img/token.png" alt="токен">+1 токен</span>
+            </div>
+            <h5 class="card-title">Arkanoid</h5>
+            <p class="text-muted small">Классика! Платформа, шарик, блоки. Изучаем: отражение, разрушение объектов, уровни.</p>
+            <div class="mt-3">
+              <a href="content/scratch/lessons/03-arkanoid/assets.zip" class="btn-download zip" download>
+                📦 Материалы к уроку (.zip)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Вкладка: Задачи ─────────────────────────────────── -->
+<section class="section section-alt" id="tab-tasks" style="display:none;">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-2">
+      <h2 class="section-title mb-0">Задачи</h2>
+    </div>
+    <p class="text-muted mb-4">Выбери понравившийся проект из сборника и создай свою игру с нуля. За это можно заработать сразу несколько токенов!</p>
+
+    <div class="task-tokens-board mb-4">
+      <div class="task-tokens-row">
+        <div class="task-tokens-row-title">🏗️ Создал собственную игру (показал учителю)</div>
+        <span class="token-reward"><img src="assets/img/token.png" alt="токен">+2 токена</span>
+      </div>
+      <div class="task-tokens-row">
+        <div class="task-tokens-row-title">📊 Подготовил презентацию по своей игре</div>
+        <span class="token-reward"><img src="assets/img/token.png" alt="токен">+1 токен</span>
+      </div>
+      <div class="task-tokens-row">
+        <div class="task-tokens-row-title">🎤 Выступил с презентацией перед классом</div>
+        <span class="token-reward"><img src="assets/img/token.png" alt="токен">+1 токен</span>
+      </div>
+      <div class="task-tokens-row" style="background:#fffbf0;">
+        <div class="task-tokens-row-title fw-bold" style="color:#b8860b;">🏆 Максимум за задачу</div>
+        <span class="token-reward token-reward-lg" style="background:linear-gradient(135deg,#fff3cd,#ffe066);"><img src="assets/img/token.png" alt="токен">+4 токена</span>
+      </div>
+    </div>
+
+    <div class="mb-3 d-flex gap-2">
+      <a href="content/scratch/task/First_Game_Projects.pdf" class="btn-download pdf" target="_blank">📄 Открыть PDF в новой вкладке</a>
+      <a href="content/scratch/task/First_Game_Projects.pdf" class="btn-download zip" download>⬇️ Скачать PDF</a>
+    </div>
+
+    <div class="pdf-embed-wrap">
+      <iframe src="content/scratch/task/First_Game_Projects.pdf" class="pdf-embed" title="Примеры игровых проектов"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 mb-3">
+        <div class="footer-title">⚙️ Кружок Робототехники</div>
+        <div>Марковская средняя общеобразовательная школа</div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="footer-title">Разделы</div>
+        <ul class="list-unstyled mb-0" style="line-height:2;">
+          <li><a href="scratch.html">Scratch</a></li>
+          <li><a href="lego.html">LEGO EV3</a></li>
+          <li><a href="print3d.html">3D Печать</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="footer-title">Контакты</div>
+        <div>Учитель:<br><strong style="color:rgba(255,255,255,0.85);">Симанов Евгений Сергеевич</strong></div>
+      </div>
+    </div>
+    <hr>
+    <div class="text-center" style="font-size:0.82rem;">Марковская СОШ · Кружок робототехники и программирования</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+function switchTab(tab) {
+  document.getElementById('tab-theory').style.display = tab === 'theory' ? '' : 'none';
+  document.getElementById('tab-lessons').style.display = tab === 'lessons' ? '' : 'none';
+  document.getElementById('tab-tasks').style.display = tab === 'tasks' ? '' : 'none';
+  document.getElementById('tab-theory-btn').classList.toggle('active', tab === 'theory');
+  document.getElementById('tab-lessons-btn').classList.toggle('active', tab === 'lessons');
+  document.getElementById('tab-tasks-btn').classList.toggle('active', tab === 'tasks');
+}
+</script>
+</body>
+</html>
