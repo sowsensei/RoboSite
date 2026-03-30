@@ -87,6 +87,54 @@ a:hover { color: var(--color-primary); }
 }
 .hero .accent { color: var(--color-primary); }
 
+/* ─── Hero info card ────────────────────────────────────── */
+.hero-info-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 20px 22px;
+  color: #fff;
+}
+.hero-info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.hero-info-row {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+}
+.hero-info-qr-row {
+  text-align: center;
+}
+.hero-info-qr {
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  opacity: 0.9;
+}
+.btn-hero-action {
+  display: block;
+  text-align: center;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.btn-hero-action:hover { opacity: 0.85; }
+.btn-hero-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-hero-secondary {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
 /* ─── Page header (inner pages) ────────────────────────── */
 .page-header {
   background: linear-gradient(135deg, var(--color-dark) 0%, #1a3a5c 100%);
