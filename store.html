@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Магазин токенов — что можно напечатать на 3D-принтере за заработанные токены в кружке робототехники.">
+  <title>Магазин токенов — Кружок робототехники</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .store-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      height: 100%;
+    }
+    .store-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+    }
+    .store-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .store-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+    .store-card-body {
+      padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .store-card-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #212529;
+    }
+    .store-card-desc {
+      font-size: 0.85rem;
+      color: #6c757d;
+      flex: 1;
+    }
+    .token-price {
+      display: inline-block;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      padding: 2px 12px;
+      margin-top: 4px;
+      align-self: flex-start;
+    }
+    .token-price-small  { background: #3ab08a; }
+    .token-price-medium { background: #e07b39; }
+    .token-price-large  { background: #c0392b; }
+
+    .store-card-footer {
+      padding: 0 1rem 1rem;
+      font-size: 0.78rem;
+      color: var(--color-primary-dark);
+      font-weight: 500;
+    }
+    .store-card:hover .store-card-footer {
+      text-decoration: underline;
+    }
+    .store-card-more {
+      background: #f4f8fb;
+      border: 2px dashed #cde;
+      border-radius: var(--radius);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .store-card-more:hover {
+      background: #e8f4fb;
+      border-color: var(--color-primary);
+    }
+    .store-card-more a {
+      text-decoration: none;
+      color: var(--color-primary-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1.5rem 1rem;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .store-card-more:hover a {
+      color: var(--color-primary);
+    }
+    .store-card-more .more-icon {
+      font-size: 2rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 3px solid;
+    }
+    .category-header-small  { border-color: #3ab08a; }
+    .category-header-medium { border-color: #e07b39; }
+    .category-header-large  { border-color: #c0392b; }
+
+    .category-badge {
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 20px;
+      padding: 4px 14px;
+      white-space: nowrap;
+    }
+    .category-badge-small  { background: #3ab08a; }
+    .category-badge-medium { background: #e07b39; }
+    .category-badge-large  { background: #c0392b; }
+
+    .category-header h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .category-section {
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Navbar ─────────────────────────────────────────── -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand home-link" href="index.html">Главная</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="scratch.html">Scratch</a></li>
+        <li class="nav-item"><a class="nav-link" href="lego.html">LEGO EV3</a></li>
+        <li class="nav-item"><a class="nav-link" href="print3d.html">3D Печать</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Галерея</a></li>
+        <li class="nav-item"><a class="nav-link active" href="store.html">Магазин</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── Page Header ────────────────────────────────────── -->
+<section class="page-header">
+  <div class="container">
+    <span class="badge-section">Токены</span>
+    <h1>🛒 Магазин токенов</h1>
+    <p class="lead">Зарабатывай токены на занятиях и выбирай, что напечатать на 3D-принтере.<br>Нажми на любую модель — откроется страница для скачивания.</p>
+  </div>
+</section>
+
+<!-- ─── Как это работает ────────────────────────────────── -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Как это работает</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 text-center">
+        <div style="font-size:2.5rem;">⭐</div>
+        <h5 class="fw-bold mt-2">Зарабатывай токены</h5>
+        <p class="text-muted small">Выполняй задания, помогай одноклассникам, участвуй в конкурсах — получай токены.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div style="font-size:2.5rem;">🛒</div>
+        <h5 class="fw-bold mt-2">Выбирай модель</h5>
+        <p class="text-muted small">Выбери что-нибудь из каталога ниже и скажи учителю. Убедись, что токенов хватает.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div style="font-size:2.5rem;">🖨️</div>
+        <h5 class="fw-bold mt-2">Получай распечатку</h5>
+        <p class="text-muted small">Учитель запускает печать, и через некоторое время модель готова — твоя!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Каталог ─────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+
+    <!-- ── Небольшие модели ──────────────────────────────── -->
+    <div class="category-section">
+      <div class="category-header category-header-small">
+        <span class="category-badge category-badge-small">🪙 3 токена</span>
+        <h3>Небольшие модели</h3>
+      </div>
+      <div class="row g-4">
+
+        <!-- Карточка -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card">
+            <a href="https://makerworld.com/ru/models/65426-fidget-cube-toy-angled?from=search#profileId-68762" target="_blank" rel="noopener">
+              <img src="assets/store/fidget.png" alt="Брелок"
+                   onerror="this.src='https://placehold.co/300x300/1a2e1a/3ab08a?text=🔑'">
+              <div class="store-card-body">
+                <div class="store-card-title">Фиджет-куб</div>
+                <span class="token-price token-price-small">🪙 3 токена</span>
+              </div>
+              <div class="store-card-footer">Открыть на MakerWorld →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Карточка -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card">
+            <a href="https://makerworld.com/ru/models/707208-clicker-fidget-print-in-place?from=search#profileId-637253" target="_blank" rel="noopener">
+              <img src="assets/store/clicker.png" alt="Мини-фигурка"
+                   onerror="this.src='https://placehold.co/300x300/1a2e1a/3ab08a?text=🐾'">
+              <div class="store-card-body">
+                <div class="store-card-title">Кликер</div>
+                <span class="token-price token-price-small">🪙 3 токена</span>
+              </div>
+              <div class="store-card-footer">Открыть на MakerWorld →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Карточка -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card">
+            <a href="https://makerworld.com/ru/models/637264-fidget-ninja-star-spinner?from=search#profileId-571532" target="_blank" rel="noopener">
+              <img src="assets/store/fidget_star.png" alt="Значок"
+                   onerror="this.src='https://placehold.co/300x300/1a2e1a/3ab08a?text=⭐'">
+              <div class="store-card-body">
+                <div class="store-card-title">Спиннер-сюрикен</div>
+                <span class="token-price token-price-small">🪙 3 токена</span>
+              </div>
+              <div class="store-card-footer">Открыть на MakerWorld →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Смотреть ещё -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card-more">
+            <a href="https://makerworld.com/ru" target="_blank" rel="noopener">
+              <span class="more-icon">🔍</span>
+              Смотреть ещё модели на MakerWorld
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /небольшие -->
+
+    <!-- ── Средние модели ────────────────────────────────── -->
+    <div class="category-section">
+      <div class="category-header category-header-medium">
+        <span class="category-badge category-badge-medium">🪙 6 токенов</span>
+        <h3>Средние модели</h3>
+      </div>
+      <div class="row g-4">
+
+        <!-- Карточка -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card">
+            <a href="https://makerworld.com/ru/models/13862-articulated-lizard-v2?from=search#profileId-13659" target="_blank" rel="noopener">
+              <img src="assets/store/lizard.png" alt="Подставка для телефона"
+                   onerror="this.src='https://placehold.co/300x300/2e1a0d/e07b39?text=📱'">
+              <div class="store-card-body">
+                <div class="store-card-title">Гибкая подставка</div>
+                <span class="token-price token-price-medium">🪙 6 токенов</span>
+              </div>
+              <div class="store-card-footer">Открыть на MakerWorld →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Карточка -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card">
+            <a href="https://makerworld.com/ru/models/127277-phone-stand-no-ams-needed?from=search#profileId-235503" target="_blank" rel="noopener">
+              <img src="assets/store/phone_stand.png" alt="Мини-ракета"
+                   onerror="this.src='https://placehold.co/300x300/2e1a0d/e07b39?text=🚀'">
+              <div class="store-card-body">
+                <div class="store-card-title">Подставка для телефона</div>
+                <span class="token-price token-price-medium">🪙 6 токенов</span>
+              </div>
+              <div class="store-card-footer">Открыть на MakerWorld →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Карточка -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card">
+            <a href="https://makerworld.com/ru/models/1372777-articulated-hand?from=search#profileId-1419528" target="_blank" rel="noopener">
+              <img src="assets/store/hand.png" alt="Сортировщик монет"
+                   onerror="this.src='https://placehold.co/300x300/2e1a0d/e07b39?text=💰'">
+              <div class="store-card-body">
+                <div class="store-card-title">Гибкая рука</div>
+                <span class="token-price token-price-medium">🪙 6 токенов</span>
+              </div>
+              <div class="store-card-footer">Открыть на MakerWorld →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Смотреть ещё -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card-more">
+            <a href="https://makerworld.com/ru" target="_blank" rel="noopener">
+              <span class="more-icon">🔍</span>
+              Смотреть ещё модели на MakerWorld
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /средние -->
+
+    <!-- ── Большие модели ────────────────────────────────── -->
+    <div class="category-section">
+      <div class="category-header category-header-large">
+        <span class="category-badge category-badge-large">🪙 10 токенов</span>
+        <h3>Большие модели</h3>
+      </div>
+      <div class="row g-4">
+
+        <!-- Карточка -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card">
+            <a href="https://makerworld.com/ru/models/1516584-collapsing-katana-fa-ren-forbearance-blade?from=search#profileId-1588756" target="_blank" rel="noopener">
+              <img src="assets/store/katana.png" alt="Органайзер для стола"
+                   onerror="this.src='https://placehold.co/300x300/2e0d0d/c0392b?text=✏️'">
+              <div class="store-card-body">
+                <div class="store-card-title">Телескопическая катана</div>
+                <span class="token-price token-price-large">🪙 10 токенов</span>
+              </div>
+              <div class="store-card-footer">Открыть на MakerWorld →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Карточка -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card">
+            <a href="https://makerworld.com/ru/models/737349-modern-headphone-stand-01?from=search#profileId-669476" target="_blank" rel="noopener">
+              <img src="assets/store/headphone_stand.png" alt="Робот-фигурка"
+                   onerror="this.src='https://placehold.co/300x300/2e0d0d/c0392b?text=🤖'">
+              <div class="store-card-body">
+                <div class="store-card-title">Подставка для наушников</div>
+                <span class="token-price token-price-large">🪙 10 токенов</span>
+              </div>
+              <div class="store-card-footer">Открыть на MakerWorld →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Карточка -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card">
+            <a href="https://makerworld.com/ru/models/583017-a-little-white-dragon?from=search#profileId-504139" target="_blank" rel="noopener">
+              <img src="assets/store/dragon.png" alt="Модель здания"
+                   onerror="this.src='https://placehold.co/300x300/2e0d0d/c0392b?text=🏠'">
+              <div class="store-card-body">
+                <div class="store-card-title">Гибкий восточный дракон</div>
+                <span class="token-price token-price-large">🪙 10 токенов</span>
+              </div>
+              <div class="store-card-footer">Открыть на MakerWorld →</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Смотреть ещё -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="store-card-more">
+            <a href="https://makerworld.com/ru" target="_blank" rel="noopener">
+              <span class="more-icon">🔍</span>
+              Смотреть ещё модели на MakerWorld
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /большие -->
+
+  </div>
+</section>
+
+<!-- ─── Footer ──────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container text-center">
+    <p class="mb-0">Кружок робототехники · Марковская СОШ</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
