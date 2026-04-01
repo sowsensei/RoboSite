@@ -212,13 +212,20 @@
             <div class="task-tokens-row-title">🏗️ Создал собственную игру (показал учителю)</div>
             <span class="token-reward"><img src="assets/img/token.png" alt="токен">+2 токена</span>
           </div>
-          <div class="task-tokens-row">
-            <div class="task-tokens-row-title">📊 Подготовил презентацию по своей игре</div>
-            <span class="token-reward"><img src="assets/img/token.png" alt="токен">+1 токен</span>
-          </div>
-          <div class="task-tokens-row">
-            <div class="task-tokens-row-title">🎤 Выступил с презентацией перед классом</div>
-            <span class="token-reward"><img src="assets/img/token.png" alt="токен">+1 токен</span>
+          <div class="task-tokens-row flex-column align-items-start gap-2">
+            <div class="d-flex w-100 align-items-center justify-content-between gap-2">
+              <div class="task-tokens-row-title">📊 Презентация по своей игре</div>
+              <div class="d-flex gap-2 flex-shrink-0">
+                <span class="token-reward" title="За подготовку презентации"><img src="assets/img/token.png" alt="токен">+1 составил</span>
+                <span class="token-reward" title="За выступление перед классом"><img src="assets/img/token.png" alt="токен">+1 выступил</span>
+              </div>
+            </div>
+            <div style="font-size:0.85rem; color:#555; border-top:1px solid #e8e8e8; padding-top:0.5rem; width:100%;">
+              💡 Попробуй освоить <strong>PowerPoint</strong> и расскажи классу о своей игре. Это только образец — твоя может быть совсем другой!
+              <div class="mt-2">
+                <a href="content/scratch/theory/Flappy_Bird_Dev.pdf" class="btn-download pdf" target="_blank">📄 Пример презентации — Flappy Bird</a>
+              </div>
+            </div>
           </div>
           <div class="task-tokens-row" style="background:#fffbf0;">
             <div class="task-tokens-row-title fw-bold" style="color:#b8860b;">🏆 Максимум за задачу</div>
@@ -226,6 +233,13 @@
           </div>
         </div>
 
+        <div class="d-flex align-items-start gap-2 mb-2 mt-4">
+          <span style="font-size:1.4rem; margin-top:2px;">📄</span>
+          <div>
+            <div class="fw-bold" style="font-size:1rem;">Сборник игровых проектов — выбери игру и создай её в Scratch</div>
+            <div style="font-size:1rem; color:#555; margin-top:2px;">Не обязательно брать игру из списка — можно придумать свою или взять механику из понравившейся и переделать под себя. Главное — сделать что-то своё!</div>
+          </div>
+        </div>
         <div class="mb-3 d-flex gap-2">
           <a href="content/scratch/task/First_Game_Projects.pdf" class="btn-download pdf" target="_blank">📄 Открыть PDF в новой вкладке</a>
           <a href="content/scratch/task/First_Game_Projects.pdf" class="btn-download zip" download>⬇️ Скачать PDF</a>
@@ -234,6 +248,7 @@
         <div class="pdf-embed-wrap">
           <iframe src="content/scratch/task/First_Game_Projects.pdf" class="pdf-embed" title="Примеры игровых проектов" loading="lazy"></iframe>
         </div>
+
       </div>
     </section>
   </div>
