@@ -59,6 +59,49 @@
             </div>
           </div>
         </div>
+      <!-- ─── Minecraft ──────────────────────────────────── -->
+      <div class="mc-card">
+
+        <div class="mc-card-header">
+          <span>🎮</span>
+          <span class="mc-card-title">Minecraft Сервер</span>
+          <span class="mc-version-badge">Java 1.21.11</span>
+        </div>
+
+        <div class="mc-ip-row">
+          <span class="mc-ip" id="mc-ip-text">185.207.133.189</span>
+          <button class="mc-copy-btn" onclick="copyMcIP(this)" title="Скопировать IP">⧉</button>
+        </div>
+
+        <div class="mc-status-row">
+          <span class="mc-dot" id="mc-dot"></span>
+          <span id="mc-status-text">проверяем...</span>
+        </div>
+
+        <div class="mc-actions">
+          <a href="content/minecraft/TLauncher-Installer-1.9.5.1.exe" class="btn-mc-primary" download>
+            ⬇️ Скачать TLauncher
+          </a>
+          <button class="btn-mc-secondary" data-bs-toggle="collapse" data-bs-target="#mc-howto">
+            ❓ Как зайти
+          </button>
+        </div>
+
+        <div class="collapse" id="mc-howto">
+          <div class="mc-howto">
+            <ol>
+              <li>Скачай и запусти <code>TLauncher-Installer</code></li>
+              <li>После установки открой TLauncher</li>
+              <li>Выбери версию <code>1.21.11</code>, нажми «Установить»</li>
+              <li>Введи любой никнейм → «Войти»</li>
+              <li>В игре: <code>Multiplayer</code> → <code>Add Server</code></li>
+              <li>Server Address: <code>185.207.133.189</code> → Join</li>
+            </ol>
+          </div>
+        </div>
+
+      </div><!-- /mc-card -->
+
       </div>
     </div>
   </div>
@@ -424,5 +467,36 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+  // Копирование IP в буфер
+  function copyMcIP(btn) {
+    navigator.clipboard.writeText('185.207.133.189').then(function() {
+      var orig = btn.textContent;
+      btn.textContent = '✓';
+      btn.style.color = '#4ade80';
+      setTimeout(function() { btn.textContent = orig; btn.style.color = ''; }, 1500);
+    });
+  }
+
+  // Живой статус сервера через публичное API
+  fetch('https://api.mcsrvstat.us/3/185.207.133.189')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var dot  = document.getElementById('mc-dot');
+      var text = document.getElementById('mc-status-text');
+      if (data.online) {
+        dot.classList.add('online');
+        var players = data.players || {};
+        text.textContent = 'Онлайн' + (players.online != null
+          ? ' · ' + players.online + '/' + players.max + ' игроков' : '');
+      } else {
+        dot.classList.add('offline');
+        text.textContent = 'Сервер недоступен';
+      }
+    })
+    .catch(function() {
+      document.getElementById('mc-status-text').textContent = 'Статус неизвестен';
+    });
+</script>
 </body>
 </html>

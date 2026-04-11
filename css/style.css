@@ -677,6 +677,142 @@ footer hr { border-color: rgba(255,255,255,0.1); }
 .text-primary-custom { color: var(--color-primary) !important; }
 .bg-dark-custom { background-color: var(--color-dark); }
 
+/* ─── Minecraft card ─────────────────────────────────────── */
+.mc-card {
+  background: linear-gradient(135deg, #0f1f0f, #1b3a1b);
+  border: 1px solid rgba(74,222,128,0.25);
+  border-radius: 14px;
+  padding: 16px 18px;
+  color: #fff;
+  margin-top: 12px;
+}
+.mc-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.mc-card-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.mc-version-badge {
+  margin-left: auto;
+  background: rgba(74,222,128,0.15);
+  color: #4ade80;
+  border: 1px solid rgba(74,222,128,0.35);
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+.mc-ip-row {
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.35);
+  border-radius: 8px;
+  padding: 7px 12px;
+  margin-bottom: 10px;
+  gap: 6px;
+}
+.mc-ip {
+  font-family: ui-monospace, monospace;
+  font-size: 0.95rem;
+  color: #4ade80;
+  font-weight: 700;
+  flex: 1;
+  user-select: all;
+}
+.mc-copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  padding: 2px 5px;
+  border-radius: 4px;
+  transition: color 0.15s;
+  line-height: 1;
+}
+.mc-copy-btn:hover { color: #fff; }
+.mc-status-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 10px;
+}
+.mc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6b7280;
+  flex-shrink: 0;
+}
+.mc-dot.online  { background: #4ade80; box-shadow: 0 0 6px rgba(74,222,128,0.6); }
+.mc-dot.offline { background: #f87171; }
+.mc-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.btn-mc-primary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-mc-primary:hover { background: #15803d; color: #fff; }
+.btn-mc-secondary {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-mc-secondary:hover { background: rgba(255,255,255,0.18); color: #fff; }
+/* Collapse — инструкция подключения */
+.mc-howto {
+  margin-top: 10px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.8);
+}
+.mc-howto ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 2;
+}
+.mc-howto code {
+  background: rgba(74,222,128,0.15);
+  color: #4ade80;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.85em;
+}
+
 /* ─── Gallery ────────────────────────────────────────────── */
 .gallery-item {
   position: relative;
