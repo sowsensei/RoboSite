@@ -633,6 +633,7 @@ footer hr { border-color: rgba(255,255,255,0.1); }
 /* ─── Card accent borders (content pages) ───────────────── */
 .card--accent-blue   { border-left: 4px solid var(--color-primary); }
 .card--accent-yellow { border-left: 4px solid #f59e0b; }
+.card--accent-green  { border-left: 4px solid #22c55e; }
 
 /* ─── Badge "в планах" ───────────────────────────────────── */
 .badge-planned {
