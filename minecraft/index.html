@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft сервер — Кружок робототехники</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="mc-page">
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand home-link" href="../index.html">← Главная</a>
+  </div>
+</nav>
+
+<div class="mc-page-wrap">
+  <div class="container">
+
+    <!-- Заголовок -->
+    <div class="mc-page-header">
+      <div class="mc-page-title">Minecraft сервер</div>
+      <div class="mc-page-version">Java Edition · 1.21.11</div>
+    </div>
+
+    <!-- IP + статус -->
+    <div class="mc-ip-block">
+      <div class="mc-ip-label">Адрес сервера</div>
+      <div class="mc-ip-big">
+        <span id="mc-ip-text">185.207.133.189</span>
+        <button class="mc-copy-btn-big" onclick="copyMcIP(this)" title="Скопировать">
+          <span class="mc-copy-icon">⧉</span>
+          <span class="mc-copy-text">Скопировать</span>
+        </button>
+      </div>
+      <div class="mc-status-row">
+        <span class="mc-dot" id="mc-dot"></span>
+        <span id="mc-status-text">проверяем...</span>
+      </div>
+    </div>
+
+    <!-- Скачать лаунчер -->
+    <div class="mc-section">
+      <a href="../content/minecraft/TLauncher-Installer-1.9.5.1.exe" class="mc-download-btn" download>
+        ⬇️ Скачать TLauncher
+      </a>
+    </div>
+
+    <!-- Как зайти + Правила -->
+    <div class="mc-two-cols">
+
+      <div class="mc-info-block">
+        <div class="mc-info-title">❓ Как зайти</div>
+        <ol class="mc-info-list">
+          <li>Скачай и запусти <code>TLauncher-Installer</code></li>
+          <li>После установки открой TLauncher</li>
+          <li>Выбери версию <code>1.21.11</code>, нажми «Установить»</li>
+          <li>Введи любой никнейм → «Войти»</li>
+          <li>В игре: <code>Сетевая игра</code> → <code>Добавить сервер</code></li>
+          <li>Server Address: <code>185.207.133.189</code> → Join</li>
+        </ol>
+      </div>
+
+      <div class="mc-info-block">
+        <div class="mc-info-title">📜 Правила</div>
+        <ol class="mc-info-list">
+          <li>Не ломай чужие постройки</li>
+          <li>Не бери из чужих сундуков без разрешения</li>
+          <li>Не используй читы и хаки</li>
+          <li>Не оскорбляй других игроков в чате</li>
+          <li>Спорные ситуации — к учителю, не выяснять самим</li>
+          <li>За нарушения — кик или бан</li>
+        </ol>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function copyMcIP(btn) {
+    navigator.clipboard.writeText('185.207.133.189').then(function() {
+      var icon = btn.querySelector('.mc-copy-icon');
+      var text = btn.querySelector('.mc-copy-text');
+      icon.textContent = '✓';
+      text.textContent = 'Скопировано!';
+      btn.style.background = 'rgba(74,222,128,0.2)';
+      btn.style.borderColor = 'rgba(74,222,128,0.5)';
+      setTimeout(function() {
+        icon.textContent = '⧉';
+        text.textContent = 'Скопировать';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+      }, 1800);
+    });
+  }
+
+  fetch('https://api.mcsrvstat.us/3/185.207.133.189')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var dot  = document.getElementById('mc-dot');
+      var text = document.getElementById('mc-status-text');
+      if (data.online) {
+        dot.classList.add('online');
+        var players = data.players || {};
+        text.textContent = 'Онлайн' + (players.online != null
+          ? ' · ' + players.online + '/' + players.max + ' игроков' : '');
+      } else {
+        dot.classList.add('offline');
+        text.textContent = 'Сервер недоступен';
+      }
+    })
+    .catch(function() {
+      document.getElementById('mc-status-text').textContent = 'Статус неизвестен';
+    });
+</script>
+</body>
+</html>

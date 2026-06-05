@@ -5,21 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Магазин токенов — что можно напечатать на 3D-принтере за заработанные токены в кружке робототехники.">
   <title>Магазин токенов — Кружок робототехники</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <style>
     .store-card {
-      background: #fff;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
       transition: transform 0.2s, box-shadow 0.2s;
       height: 100%;
     }
     .store-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      background: var(--bg-card-hover);
     }
     .store-card a {
       text-decoration: none;
@@ -43,11 +45,11 @@
     .store-card-title {
       font-weight: 600;
       font-size: 1rem;
-      color: #212529;
+      color: var(--text-heading);
     }
     .store-card-desc {
       font-size: 0.85rem;
-      color: #6c757d;
+      color: var(--text-muted);
       flex: 1;
     }
     .token-price {
@@ -67,29 +69,30 @@
     .store-card-footer {
       padding: 0 1rem 1rem;
       font-size: 0.78rem;
-      color: var(--color-primary-dark);
+      color: var(--color-primary);
       font-weight: 500;
     }
     .store-card:hover .store-card-footer {
       text-decoration: underline;
     }
     .store-card-more {
-      background: #f4f8fb;
-      border: 2px dashed #cde;
+      background: rgba(255,255,255,0.04);
+      border: 2px dashed rgba(255,255,255,0.15);
       border-radius: var(--radius);
       height: 100%;
+      min-height: 160px;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: background 0.2s, border-color 0.2s;
     }
     .store-card-more:hover {
-      background: #e8f4fb;
+      background: rgba(0,180,216,0.1);
       border-color: var(--color-primary);
     }
     .store-card-more a {
       text-decoration: none;
-      color: var(--color-primary-dark);
+      color: var(--text-muted);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -137,6 +140,7 @@
       margin: 0;
       font-size: 1.3rem;
       font-weight: 700;
+      color: var(--text-heading);
     }
     .category-section {
       margin-bottom: 3rem;
@@ -148,51 +152,20 @@
 <!-- ─── Navbar ─────────────────────────────────────────── -->
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
-    <a class="navbar-brand home-link" href="index.html">Главная</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto gap-lg-1">
-        <li class="nav-item"><a class="nav-link" href="scratch.html">Scratch</a></li>
-        <li class="nav-item"><a class="nav-link" href="lego.html">LEGO EV3</a></li>
-        <li class="nav-item"><a class="nav-link" href="print3d.html">3D Печать</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Галерея</a></li>
-        <li class="nav-item"><a class="nav-link active" href="store.html">Магазин</a></li>
-      </ul>
-    </div>
+    <a class="navbar-brand home-link" href="../index.html">← Главная</a>
   </div>
 </nav>
 
 <!-- ─── Page Header ────────────────────────────────────── -->
-<section class="page-header">
+<section class="page-header" style="padding:2rem 0 1.5rem;">
   <div class="container">
-    <span class="badge-section">Токены</span>
     <h1>🛒 Магазин токенов</h1>
-    <p class="lead">Зарабатывай токены на занятиях и выбирай, что напечатать на 3D-принтере.<br>Нажми на любую модель — откроется страница для скачивания.</p>
-  </div>
-</section>
-
-<!-- ─── Как это работает ────────────────────────────────── -->
-<section class="section section-alt">
-  <div class="container">
-    <h2 class="section-title">Как это работает</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4 text-center">
-        <div style="font-size:2.5rem;">⭐</div>
-        <h5 class="fw-bold mt-2">Зарабатывай токены</h5>
-        <p class="text-muted small">Выполняй задания, помогай одноклассникам, участвуй в конкурсах — получай токены.</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <div style="font-size:2.5rem;">🛒</div>
-        <h5 class="fw-bold mt-2">Выбирай модель</h5>
-        <p class="text-muted small">Выбери что-нибудь из каталога ниже и скажи учителю. Убедись, что токенов хватает.</p>
-      </div>
-      <div class="col-md-4 text-center">
-        <div style="font-size:2.5rem;">🖨️</div>
-        <h5 class="fw-bold mt-2">Получай распечатку</h5>
-        <p class="text-muted small">Учитель запускает печать, и через некоторое время модель готова — твоя!</p>
-      </div>
+    <div class="d-flex flex-wrap gap-3 mt-3 align-items-center" style="font-size:0.92rem;color:var(--text-muted);">
+      <span>⭐ Зарабатывай токены на занятиях</span>
+      <span style="opacity:0.4;">·</span>
+      <span>🛒 Выбирай модель из каталога</span>
+      <span style="opacity:0.4;">·</span>
+      <span>🖨️ Получай распечатку на 3D-принтере</span>
     </div>
   </div>
 </section>
@@ -213,7 +186,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="store-card">
             <a href="https://makerworld.com/ru/models/65426-fidget-cube-toy-angled?from=search#profileId-68762" target="_blank" rel="noopener">
-              <img src="assets/store/fidget.png" alt="Брелок"
+              <img src="../assets/store/fidget.png" alt="Брелок"
                    onerror="this.src='https://placehold.co/300x300/1a2e1a/3ab08a?text=🔑'">
               <div class="store-card-body">
                 <div class="store-card-title">Фиджет-куб</div>
@@ -228,7 +201,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="store-card">
             <a href="https://makerworld.com/ru/models/707208-clicker-fidget-print-in-place?from=search#profileId-637253" target="_blank" rel="noopener">
-              <img src="assets/store/clicker.png" alt="Мини-фигурка"
+              <img src="../assets/store/clicker.png" alt="Мини-фигурка"
                    onerror="this.src='https://placehold.co/300x300/1a2e1a/3ab08a?text=🐾'">
               <div class="store-card-body">
                 <div class="store-card-title">Кликер</div>
@@ -243,7 +216,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="store-card">
             <a href="https://makerworld.com/ru/models/637264-fidget-ninja-star-spinner?from=search#profileId-571532" target="_blank" rel="noopener">
-              <img src="assets/store/fidget_star.png" alt="Значок"
+              <img src="../assets/store/fidget_star.png" alt="Значок"
                    onerror="this.src='https://placehold.co/300x300/1a2e1a/3ab08a?text=⭐'">
               <div class="store-card-body">
                 <div class="store-card-title">Спиннер-сюрикен</div>
@@ -279,7 +252,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="store-card">
             <a href="https://makerworld.com/ru/models/13862-articulated-lizard-v2?from=search#profileId-13659" target="_blank" rel="noopener">
-              <img src="assets/store/lizard.png" alt="Подставка для телефона"
+              <img src="../assets/store/lizard.png" alt="Подставка для телефона"
                    onerror="this.src='https://placehold.co/300x300/2e1a0d/e07b39?text=📱'">
               <div class="store-card-body">
                 <div class="store-card-title">Гибкая модель ящерицы</div>
@@ -294,7 +267,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="store-card">
             <a href="https://makerworld.com/ru/models/127277-phone-stand-no-ams-needed?from=search#profileId-235503" target="_blank" rel="noopener">
-              <img src="assets/store/phone_stand.png" alt="Мини-ракета"
+              <img src="../assets/store/phone_stand.png" alt="Мини-ракета"
                    onerror="this.src='https://placehold.co/300x300/2e1a0d/e07b39?text=🚀'">
               <div class="store-card-body">
                 <div class="store-card-title">Подставка для телефона</div>
@@ -309,7 +282,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="store-card">
             <a href="https://makerworld.com/ru/models/1372777-articulated-hand?from=search#profileId-1419528" target="_blank" rel="noopener">
-              <img src="assets/store/hand.png" alt="Сортировщик монет"
+              <img src="../assets/store/hand.png" alt="Сортировщик монет"
                    onerror="this.src='https://placehold.co/300x300/2e1a0d/e07b39?text=💰'">
               <div class="store-card-body">
                 <div class="store-card-title">Гибкая рука</div>
@@ -345,7 +318,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="store-card">
             <a href="https://makerworld.com/ru/models/1516584-collapsing-katana-fa-ren-forbearance-blade?from=search#profileId-1588756" target="_blank" rel="noopener">
-              <img src="assets/store/katana.png" alt="Органайзер для стола"
+              <img src="../assets/store/katana.png" alt="Органайзер для стола"
                    onerror="this.src='https://placehold.co/300x300/2e0d0d/c0392b?text=✏️'">
               <div class="store-card-body">
                 <div class="store-card-title">Телескопическая катана</div>
@@ -360,7 +333,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="store-card">
             <a href="https://makerworld.com/ru/models/737349-modern-headphone-stand-01?from=search#profileId-669476" target="_blank" rel="noopener">
-              <img src="assets/store/headphone_stand.png" alt="Робот-фигурка"
+              <img src="../assets/store/headphone_stand.png" alt="Робот-фигурка"
                    onerror="this.src='https://placehold.co/300x300/2e0d0d/c0392b?text=🤖'">
               <div class="store-card-body">
                 <div class="store-card-title">Подставка для наушников</div>
@@ -375,7 +348,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="store-card">
             <a href="https://makerworld.com/ru/models/583017-a-little-white-dragon?from=search#profileId-504139" target="_blank" rel="noopener">
-              <img src="assets/store/dragon.png" alt="Модель здания"
+              <img src="../assets/store/dragon.png" alt="Модель здания"
                    onerror="this.src='https://placehold.co/300x300/2e0d0d/c0392b?text=🏠'">
               <div class="store-card-body">
                 <div class="store-card-title">Гибкий восточный дракон</div>
