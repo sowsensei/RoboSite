@@ -1228,6 +1228,99 @@ footer hr { border-color: rgba(255,255,255,0.1); }
   font-size: 0.88em;
 }
 
+/* Блок скачивания лаунчера */
+.mc-download-section {
+  max-width: 860px;
+  margin: 0 auto 1.5rem;
+  text-align: left;
+}
+.mc-download-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: rgba(22,163,74,0.12);
+  border: 1px solid rgba(74,222,128,0.3);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  flex-wrap: wrap;
+}
+.mc-launcher-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+}
+.mc-download-info {
+  flex: 1;
+  min-width: 160px;
+}
+.mc-download-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+}
+.mc-download-meta {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+}
+
+/* Широкие инфо-блоки */
+.mc-wide {
+  max-width: 860px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Блок пароля */
+.mc-password-block {
+  background: rgba(251,191,36,0.07);
+  border-color: rgba(251,191,36,0.25);
+}
+.mc-info-text {
+  font-size: 0.93rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+.mc-cmd-example {
+  background: rgba(0,0,0,0.4);
+  border-left: 3px solid #4ade80;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0 0.75rem;
+  font-size: 0.95rem;
+}
+.mc-cmd-example code {
+  color: #4ade80;
+}
+.mc-tip {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+}
+
+/* Заметка для родителей */
+.mc-parents-note {
+  max-width: 860px;
+  margin: 0 auto 2rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.6;
+  padding: 0 0.5rem;
+}
+.mc-parents-note code {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+kbd {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.85em;
+  color: rgba(255,255,255,0.8);
+}
+
 /* ─── Minecraft card ─────────────────────────────────────── */
 .mc-card {
   background: linear-gradient(135deg, #0f1f0f, #1b3a1b);

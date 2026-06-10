@@ -54,27 +54,61 @@
     </div>
 
     <!-- Скачать лаунчер -->
-    <div class="mc-section">
-      <a href="../content/minecraft/TLauncher-Installer-1.9.5.1.exe" class="mc-download-btn" download>
-        ⬇️ Скачать TLauncher
-      </a>
+    <div class="mc-section mc-download-section">
+      <div class="mc-download-inner">
+        <img src="launcher-icon.png" alt="" class="mc-launcher-icon">
+        <div class="mc-download-info">
+          <div class="mc-download-title">MineLauncher — наш лаунчер</div>
+          <div class="mc-download-meta">Версия игры 1.21.11 · ~69 МБ · Windows 10/11 64-бит</div>
+        </div>
+        <a href="MineLauncher.exe" class="mc-download-btn" download>
+          ⬇️ Скачать лаунчер
+        </a>
+      </div>
     </div>
 
-    <!-- Как зайти + Правила -->
+    <!-- Инструкция по установке -->
+    <div class="mc-info-block mc-wide">
+      <div class="mc-info-title">🚀 Как установить и войти</div>
+      <ol class="mc-info-list">
+        <li>Скачай файл <code>MineLauncher.exe</code> и два раза щёлкни по нему. Устанавливать ничего не нужно.</li>
+        <li>
+          Windows может показать синее окно <strong>«Система Windows защитила ваш компьютер»</strong> — это нормально.
+          Нажми <strong>«Подробнее»</strong>, потом <strong>«Выполнить в любом случае»</strong>.
+        </li>
+        <li>Придумай себе ник английскими буквами (можно цифры и <code>_</code>, от 3 до 16 символов). Например: <code>Misha2018</code>. Лаунчер запомнит ник — второй раз вводить не нужно.</li>
+        <li><strong>Сообщи свой ник учителю</strong> — он добавит тебя в список игроков сервера. Пока тебя нет в списке, сервер не пустит.</li>
+        <li>Нажми зелёную кнопку <strong>ИГРАТЬ</strong>. Первый раз игра будет скачиваться несколько минут — внизу видна полоска загрузки. Не закрывай окно.</li>
+        <li>Игра откроется и сама зайдёт на наш сервер.</li>
+      </ol>
+    </div>
+
+    <!-- Пароль на сервере -->
+    <div class="mc-info-block mc-wide mc-password-block">
+      <div class="mc-info-title">🔑 Пароль на сервере</div>
+      <div class="mc-info-text">
+        На сервере есть защита паролем. В первый раз, когда зашёл в игру, открой чат клавишей <kbd>T</kbd> и напиши:
+      </div>
+      <div class="mc-cmd-example"><code>/register твойпароль твойпароль</code></div>
+      <div class="mc-info-text">(один и тот же пароль два раза через пробел). Запомни этот пароль!</div>
+      <div class="mc-info-text mt-2">В следующие разы при входе пиши:</div>
+      <div class="mc-cmd-example"><code>/login твойпароль</code></div>
+      <div class="mc-info-text mc-tip">💡 Придумай простой пароль и запиши его. Если забыл — напиши учителю, он сбросит.</div>
+    </div>
+
+    <!-- Не работает + Правила -->
     <div class="mc-two-cols">
 
       <div class="mc-info-block">
-        <div class="mc-info-title">❓ Как зайти</div>
-        <ol class="mc-info-list">
-          <li>Придумай никнейм и напиши его учителю в MAX</li>
-          <li>Дождись, пока тебя добавят в белый список</li>
-          <li>Скачай и запусти <code>TLauncher-Installer</code></li>
-          <li>После установки открой TLauncher</li>
-          <li>Выбери версию <code>1.21.11</code>, нажми «Установить»</li>
-          <li>Введи свой никнейм → «Войти»</li>
-          <li>В игре: <code>Сетевая игра</code> → <code>Добавить сервер</code></li>
-          <li>Server Address: <code>185.207.133.189</code> → Join</li>
-        </ol>
+        <div class="mc-info-title">⚠️ Если не работает</div>
+        <ul class="mc-info-list">
+          <li>Проверь интернет и попробуй ещё раз — лаунчер сам докачает файлы.</li>
+          <li>Если пишет, что ник неправильный — проверь, что он английскими буквами.</li>
+          <li>Если сервер не пускает — напиши учителю: возможно, твой ник ещё не добавлен в список.</li>
+          <li>
+            <a href="https://max.ru/u/f9LHodD0cOKYRBtW9IS08uMA7dQEhtoW4r_BszeWu8BMycyoZxN2Ono1mxY" target="_blank" rel="noopener noreferrer">💬 Написать учителю в MAX</a>
+          </li>
+        </ul>
       </div>
 
       <div class="mc-info-block">
@@ -89,6 +123,11 @@
         </ol>
       </div>
 
+    </div>
+
+    <!-- Для родителей -->
+    <div class="mc-parents-note">
+      <strong>Для родителей:</strong> лаунчер скачивает игровые файлы только с официальных серверов Mojang, не содержит рекламы и сторонних программ. Файлы игры хранятся в папке <code>%APPDATA%\.minelauncher</code>.
     </div>
 
   </div>
