@@ -1266,6 +1266,48 @@ footer hr { border-color: rgba(255,255,255,0.1); }
   margin-top: 2px;
 }
 
+/* Предупреждение браузера под кнопкой скачивания */
+.mc-browser-warn {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  background: rgba(251,191,36,0.07);
+  border: 1px solid rgba(251,191,36,0.2);
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+.mc-browser-warn-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  margin-top: 1px;
+}
+.mc-browser-warn strong {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Скриншот SmartScreen в инструкции */
+.mc-warn-screenshot {
+  margin-top: 0.75rem;
+  display: inline-block;
+}
+.mc-warn-screenshot img {
+  display: block;
+  max-width: 320px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.mc-warn-caption {
+  font-size: 0.8rem;
+  color: #4ade80;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
 /* Широкие инфо-блоки */
 .mc-wide {
   max-width: 860px;
