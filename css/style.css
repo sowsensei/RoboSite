@@ -733,9 +733,8 @@ footer hr { border-color: rgba(255,255,255,0.12); }
   .landing-panel--featured .landing-panel-img {
     aspect-ratio: 3 / 2;
   }
-  .landing-panel--featured .landing-panel-title { font-size: 1.5rem; }
-  .landing-panel--featured .landing-panel-tag   { font-size: 0.78rem; }
-  .landing-panel--featured .landing-panel-desc  { font-size: 0.88rem; }
+  .landing-panel--featured .landing-panel-tag  { font-size: 1.5rem; }
+  .landing-panel--featured .landing-panel-desc { font-size: 0.88rem; }
 }
 @media (max-width: 639px) {
   .landing-h1 { font-size: 1.8rem; }
@@ -788,14 +787,6 @@ footer hr { border-color: rgba(255,255,255,0.12); }
   border-radius: 0 0 13px 13px;
 }
 .landing-panel-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ginger-600);
-  opacity: 1;
-}
-.landing-panel-title {
   font-family: 'Rubik', sans-serif;
   font-size: 1.2rem;
   font-weight: 800;
@@ -819,7 +810,7 @@ footer hr { border-color: rgba(255,255,255,0.12); }
 .landing-panel--featured:hover {
   box-shadow: 8px 8px 0 var(--ink);
 }
-.landing-panel--featured .landing-panel-title {
+.landing-panel--featured .landing-panel-tag {
   font-size: 1.4rem;
 }
 .landing-panel--featured .landing-panel-tag {
@@ -858,7 +849,7 @@ footer hr { border-color: rgba(255,255,255,0.12); }
     justify-content: center;
     border-radius: 0 13px 13px 0;
   }
-  .landing-panel-title { font-size: 1.05rem; }
+  .landing-panel-tag   { font-size: 1.05rem; }
   .landing-panel-badge { display: none; }
 }
 
