@@ -859,7 +859,7 @@ footer hr { border-color: rgba(255,255,255,0.12); }
     border-radius: 0 13px 13px 0;
   }
   .landing-panel-title { font-size: 1.05rem; }
-  /* featured на мобиле — как обычная карточка */
+  .landing-panel-badge { display: none; }
 }
 
 /* ─── Картинки-иконки в карточках ──────────────────────── */
