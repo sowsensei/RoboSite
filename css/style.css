@@ -722,10 +722,20 @@ footer hr { border-color: rgba(255,255,255,0.12); }
   max-width: 1100px;
 }
 @media (min-width: 640px) {
-  .landing-panels { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 960px) {
-  .landing-panels { grid-template-columns: repeat(4, 1fr); }
+  .landing-panels { grid-template-columns: repeat(3, 1fr); }
+
+  /* Уроки — первый ряд, одна по центру, чуть крупнее */
+  .landing-panel--featured {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(420px, 100%);
+  }
+  .landing-panel--featured .landing-panel-img {
+    aspect-ratio: 3 / 2;
+  }
+  .landing-panel--featured .landing-panel-title { font-size: 1.5rem; }
+  .landing-panel--featured .landing-panel-tag   { font-size: 0.78rem; }
+  .landing-panel--featured .landing-panel-desc  { font-size: 0.88rem; }
 }
 @media (max-width: 639px) {
   .landing-h1 { font-size: 1.8rem; }
@@ -735,20 +745,20 @@ footer hr { border-color: rgba(255,255,255,0.12); }
   flex-direction: column;
   border-radius: 16px;
   text-decoration: none;
-  color: #fff;
+  color: var(--brown-900);
   border: 2.5px solid var(--ink);
   box-shadow: var(--pop);
   transition: transform 0.08s, box-shadow 0.08s;
 }
 .landing-panel:hover {
-  color: #fff;
+  color: var(--brown-900);
   transform: translate(-2px,-2px);
   box-shadow: var(--pop-lg);
 }
 .landing-panel:active {
   transform: translate(2px,2px);
   box-shadow: none;
-  color: #fff;
+  color: var(--brown-900);
 }
 .landing-panel:hover .landing-panel-img img {
   transform: scale(1.05);
@@ -800,11 +810,56 @@ footer hr { border-color: rgba(255,255,255,0.12); }
 .landing-panel--minecraft { background: var(--cream-50); }
 .landing-panel--store     { background: var(--cream-50); }
 
+/* Featured (уроки) — шире и заметнее */
+.landing-panel--featured {
+  border-color: var(--ginger-500);
+  border-width: 3px;
+  box-shadow: var(--pop-lg);
+}
+.landing-panel--featured:hover {
+  box-shadow: 8px 8px 0 var(--ink);
+}
+.landing-panel--featured .landing-panel-title {
+  font-size: 1.4rem;
+}
+.landing-panel--featured .landing-panel-tag {
+  color: var(--ginger-600);
+}
+
+/* Бейдж "УРОК" поверх картинки */
+.landing-panel-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--ginger-500);
+  color: var(--ink);
+  font-family: 'Rubik', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 2px solid var(--ink);
+  box-shadow: var(--pop-sm);
+  pointer-events: none;
+}
+.landing-panel-img { position: relative; }
+
 @media (max-width: 639px) {
   .landing-panel { flex-direction: row; align-items: stretch; }
-  .landing-panel-img { width: 110px; aspect-ratio: auto; flex-shrink: 0; }
-  .landing-panel-body { justify-content: center; }
+  .landing-panel-img {
+    width: 110px;
+    aspect-ratio: auto;
+    flex-shrink: 0;
+    border-radius: 13px 0 0 13px;
+  }
+  .landing-panel-body {
+    justify-content: center;
+    border-radius: 0 13px 13px 0;
+  }
   .landing-panel-title { font-size: 1.05rem; }
+  /* featured на мобиле — как обычная карточка */
 }
 
 /* ─── Картинки-иконки в карточках ──────────────────────── */
