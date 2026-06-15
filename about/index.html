@@ -201,54 +201,66 @@
   </div>
 </section>
 
-<!-- Галерея — карусель -->
+<!-- Галерея — сетка миниатюр -->
 <section class="section">
   <div class="container">
     <h2 class="section-title">Смотри, что мы делаем</h2>
-    <p class="text-muted mb-4">Фотографии с занятий, готовые проекты и работы учеников.</p>
+    <p class="text-muted mb-4">Фотографии с занятий, готовые проекты и работы учеников. Нажми на фото, чтобы увеличить.</p>
 
-    <div id="aboutCarousel" class="carousel slide about-carousel mb-4" data-bs-ride="carousel">
-      <div class="carousel-inner">
-
-        <div class="carousel-item active">
-          <img src="../assets/gallery/photos/IMG_20260409_191023.jpg" class="d-block w-100" alt="Фото с занятия">
+    <div class="row g-2">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="gallery-item" onclick="openPhoto('../assets/gallery/photos/IMG_20260409_191023.jpg')">
+          <img src="../assets/gallery/photos/IMG_20260409_191023.jpg" alt="Фото с занятия" loading="lazy">
         </div>
-        <div class="carousel-item">
-          <img src="../assets/gallery/photos/IMG_20260409_191037.jpg" class="d-block w-100" alt="Фото с занятия">
-        </div>
-        <div class="carousel-item">
-          <img src="../assets/gallery/photos/IMG_20260409_192859.jpg" class="d-block w-100" alt="Фото с занятия">
-        </div>
-        <div class="carousel-item">
-          <img src="../assets/gallery/photos/IMG_20260409_192948.jpg" class="d-block w-100" alt="Фото с занятия">
-        </div>
-        <div class="carousel-item">
-          <img src="../assets/gallery/photos/IMG_20260409_193059.jpg" class="d-block w-100" alt="Фото с занятия">
-        </div>
-        <div class="carousel-item">
-          <img src="../assets/gallery/photos/IMG_20260411_125827.jpg" class="d-block w-100" alt="Фото с занятия">
-        </div>
-        <div class="carousel-item">
-          <img src="../assets/gallery/photos/IMG_20260411_125838.jpg" class="d-block w-100" alt="Фото с занятия">
-        </div>
-
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-
-    <div class="text-center">
-      <a href="gallery.html" class="btn-hero-action btn-hero-primary" style="display:inline-flex;align-items:center;gap:6px;width:auto;padding:10px 28px;font-size:1rem;">
-        🖼️ Смотреть все фото
-      </a>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="gallery-item" onclick="openPhoto('../assets/gallery/photos/IMG_20260409_191037.jpg')">
+          <img src="../assets/gallery/photos/IMG_20260409_191037.jpg" alt="Фото с занятия" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="gallery-item" onclick="openPhoto('../assets/gallery/photos/IMG_20260409_192859.jpg')">
+          <img src="../assets/gallery/photos/IMG_20260409_192859.jpg" alt="Фото с занятия" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="gallery-item" onclick="openPhoto('../assets/gallery/photos/IMG_20260409_192948.jpg')">
+          <img src="../assets/gallery/photos/IMG_20260409_192948.jpg" alt="Фото с занятия" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="gallery-item" onclick="openPhoto('../assets/gallery/photos/IMG_20260409_193059.jpg')">
+          <img src="../assets/gallery/photos/IMG_20260409_193059.jpg" alt="Фото с занятия" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="gallery-item" onclick="openPhoto('../assets/gallery/photos/IMG_20260411_125827.jpg')">
+          <img src="../assets/gallery/photos/IMG_20260411_125827.jpg" alt="Фото с занятия" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="gallery-item" onclick="openPhoto('../assets/gallery/photos/IMG_20260411_125838.jpg')">
+          <img src="../assets/gallery/photos/IMG_20260411_125838.jpg" alt="Фото с занятия" loading="lazy">
+        </div>
+      </div>
     </div>
 
   </div>
 </section>
+
+<!-- Модальное окно просмотра фото -->
+<div class="modal fade" id="photoModal" tabindex="-1" aria-label="Просмотр фото">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content border-0" style="background:#1a1008;">
+      <div class="modal-header border-0 pb-0">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body text-center p-2 pt-0">
+        <img id="modal-photo" src="" alt="" class="img-fluid rounded" style="max-height:82vh;object-fit:contain;">
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Как записаться -->
 <section class="section section-alt">
@@ -310,5 +322,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../js/main.js"></script>
+<script>
+  function openPhoto(src) {
+    document.getElementById('modal-photo').src = src;
+    new bootstrap.Modal(document.getElementById('photoModal')).show();
+  }
+</script>
 </body>
 </html>

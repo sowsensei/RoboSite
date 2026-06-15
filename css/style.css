@@ -872,6 +872,9 @@ footer hr { border-color: rgba(255,255,255,0.12); }
   background: var(--bg-card-hover);
   color: var(--text-main);
 }
+.subject-card:hover .subject-card-img {
+  background: var(--bg-card-hover);
+}
 .subject-card--scratch  { border-top-color: #ff8c00; }
 .subject-card--lego     { border-top-color: #e63946; }
 .subject-card--3dprint  { border-top-color: var(--cyan-500); }
@@ -889,7 +892,7 @@ footer hr { border-color: rgba(255,255,255,0.12); }
 }
 .subject-card-img {
   width: 100%;
-  background: var(--cream-100);
+  background: #fff;
   padding: 2rem 2rem 1.5rem;
   display: flex;
   align-items: center;
@@ -1652,11 +1655,22 @@ kbd {
 /* ─── Gallery ────────────────────────────────────────────── */
 .gallery-item {
   position: relative;
-  border-radius: var(--radius);
+  border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  background: #e9ecef;
+  background: var(--cream-100);
   aspect-ratio: 1;
+  border: 2px solid var(--ink);
+  box-shadow: var(--pop-sm);
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+.gallery-item:hover {
+  transform: translate(-2px,-2px);
+  box-shadow: var(--pop);
+}
+.gallery-item:active {
+  transform: translate(2px,2px);
+  box-shadow: none;
 }
 .gallery-item img {
   width: 100%;
@@ -1666,15 +1680,13 @@ kbd {
   transition: transform 0.3s ease;
 }
 .gallery-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 .gallery-caption {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.6));
-  color: #fff;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(46,26,14,0.55));
+  color: var(--cream-50);
   font-size: 0.82rem;
   padding: 1.5rem 0.75rem 0.5rem;
 }
