@@ -256,7 +256,7 @@
   <div class="container">
     <div class="mc-header-eyebrow">Играй с друзьями</div>
     <h1>⛏️ Minecraft сервер</h1>
-    <p class="lead">Школьный сервер для учеников кружка · Java Edition · 1.21.11</p>
+    <p class="lead">Школьный сервер для учеников кружка · Java Edition · <span id="mc-version">…</span></p>
   </div>
 </section>
 
@@ -296,7 +296,7 @@
       <img src="launcher-icon.png" alt="" class="mc-launcher-icon">
       <div class="mc-download-info">
         <div class="mc-download-title">MineLauncher — наш лаунчер</div>
-        <div class="mc-download-meta">Версия игры 1.21.11 · ~69 МБ · Windows 10/11 64-бит</div>
+        <div class="mc-download-meta">Версия игры <span id="mc-version-2">…</span> · ~69 МБ · Windows 10/11 64-бит</div>
       </div>
       <a href="MineLauncher.exe" class="mc-download-btn" download>
         ⬇️ Скачать лаунчер
@@ -392,6 +392,16 @@
       }, 1800);
     });
   }
+
+  fetch('launcher-config.json')
+    .then(function(r) { return r.json(); })
+    .then(function(cfg) {
+      var v1 = document.getElementById('mc-version');
+      var v2 = document.getElementById('mc-version-2');
+      if (v1) v1.textContent = cfg.gameVersion;
+      if (v2) v2.textContent = cfg.gameVersion;
+    })
+    .catch(function() {});
 
   fetch('https://api.mcsrvstat.us/3/185.207.133.189')
     .then(function(r) { return r.json(); })
