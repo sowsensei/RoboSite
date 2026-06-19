@@ -3,6 +3,8 @@
   "serverIp": "185.207.133.189",
   "serverPort": 25565,
   "gameVersion": "26.1.2",
+  "appVersion": "1.2.0",
+  "appDownloadUrl": "https://sowsensei.github.io/RoboSite/minecraft/MineLauncher.exe",
   "infoUrl": "https://sowsensei.github.io/RoboSite/minecraft/index.html",
   "news": ""
 }
