@@ -296,7 +296,7 @@
       <img src="launcher-icon.png" alt="" class="mc-launcher-icon">
       <div class="mc-download-info">
         <div class="mc-download-title">MineLauncher — наш лаунчер</div>
-        <div class="mc-download-meta">Версия игры <span id="mc-version-2">…</span> · ~69 МБ · Windows 10/11 64-бит</div>
+        <div class="mc-download-meta">Версия игры <span id="mc-version-2">…</span> · лаунчер <span id="mc-app-version">…</span> · ~69 МБ · Windows 10/11 64-бит</div>
       </div>
       <a href="MineLauncher.exe" class="mc-download-btn" download>
         ⬇️ Скачать лаунчер
@@ -401,8 +401,10 @@
     .then(function(cfg) {
       var v1 = document.getElementById('mc-version');
       var v2 = document.getElementById('mc-version-2');
+      var av = document.getElementById('mc-app-version');
       if (v1) v1.textContent = cfg.gameVersion;
       if (v2) v2.textContent = cfg.gameVersion;
+      if (av) av.textContent = 'v' + cfg.appVersion;
 
       mcServerAddress = cfg.serverPort && cfg.serverPort !== 25565
         ? cfg.serverIp + ':' + cfg.serverPort
