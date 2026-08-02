@@ -1,10 +1,10 @@
 {
   "serverName": "Наш сервер",
-  "serverIp": "185.207.133.189",
+  "serverIp": "193.107.232.81",
   "serverPort": 25565,
   "gameVersion": "26.1.2",
-  "appVersion": "1.1.0",
-  "appDownloadUrl": "https://sowsensei.github.io/RoboSite/minecraft/MineLauncher.exe",
-  "infoUrl": "https://sowsensei.github.io/RoboSite/minecraft/index.html",
+  "appVersion": "1.1.1",
+  "appDownloadUrl": "https://robo.markovo-school.ru/minecraft/MineLauncher.exe",
+  "infoUrl": "https://robo.markovo-school.ru/minecraft/index.html",
   "news": ""
 }
