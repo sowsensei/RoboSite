@@ -662,6 +662,29 @@ footer a:hover { color: var(--ginger-500); }
   text-align: center;
 }
 
+/* Ссылка на дата-центр itsoft — обязательное условие бесплатного хостинга
+   (см. комментарий в partials/footer.html). Логотип кладём на прозрачный фон
+   без белой плашки: PNG уже с альфа-каналом, а его цвета (оранжевый + светло-
+   серый) нормально читаются на тёмном футере. */
+.footer-hosting {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+}
+.footer-hosting a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.78rem;
+  color: rgba(255,251,242,0.5);
+}
+.footer-hosting img {
+  display: block;
+  width: 90px;
+  height: auto;
+}
+
 /* ─── Лендинг (index.html) ───────────────────────────── */
 body.landing-body {
   display: flex;

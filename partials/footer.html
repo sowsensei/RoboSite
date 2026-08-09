@@ -29,5 +29,18 @@
         </div>
       </div>
     </div>
+
+    <!-- Обязательная индексируемая ссылка по условиям бесплатного хостинга у
+         itsoft: такой же блок стоит в футере школьного сайта (MarkovoSite,
+         partials/footer.php). Видимый текст «Дата-центр itsoft» внутри ссылки
+         обязателен — alt картинки поисковик читает слабее, а условие именно
+         про текст. rel="noopener" тут только про безопасность target="_blank",
+         nofollow ставить нельзя. -->
+    <div class="footer-hosting">
+      <a href="https://itsoft.ru/data-center/" target="_blank" rel="noopener">
+        <img src="/assets/img/itsoft-logo.png" alt="Дата-центр itsoft">
+        <span>Дата-центр itsoft</span>
+      </a>
+    </div>
   </div>
 </footer>
