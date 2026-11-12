@@ -18,6 +18,8 @@
     .challenge-heading {display:flex; flex-wrap:wrap; align-items:center; gap:.75rem; margin-bottom:.7rem}
     .challenge-heading h2 {margin:0}
     .challenge-tag {background:#e5f6f0; color:#116c5d; border-radius:999px; padding:.3rem .75rem; font-size:.9rem; font-weight:700}
+    .challenge-details summary {cursor:pointer; color:#08715f; font-weight:700; padding:.3rem 0 .8rem}
+    .challenge-details summary:focus-visible {outline:2px solid #168b75; outline-offset:3px}
     .challenge-grid {display:grid; grid-template-columns:minmax(0, 1.2fr) minmax(260px, .8fr); gap:2rem; align-items:start}
     .challenge h3 {font-size:1.15rem; margin:1.4rem 0 .6rem}
     .challenge li {margin-bottom:.4rem}
@@ -43,6 +45,7 @@
   <article id="drawing" class="challenge">
     <div class="challenge-heading"><h2>✏️ Чертёжник</h2><span class="challenge-tag">7–11 лет · до 2 минут</span></div>
     <p>Построй робота с маркером, который нарисует фигуру, соединяя точки прямыми линиями.</p>
+    <details class="challenge-details"><summary>Открыть задание, схему и ограничения</summary>
     <div class="challenge-grid"><div>
       <h3>Твоё задание</h3>
       <ol><li>Подготовь поле размером 1200 × 900 мм и отметь на нём точки.</li><li>Закрепи маркер на роботе и поставь его в центр одной из отмеченных окружностей.</li><li>Настрой робота так, чтобы он нарисовал заданную фигуру непрерывной линией.</li><li>Проверь точность и попробуй выполнить задание быстрее.</li></ol>
@@ -52,10 +55,12 @@
     </div><figure>
       <svg viewBox="0 0 400 260" role="img" aria-label="Пример поля с пятью точками и фигурой в форме домика"><rect x="18" y="18" width="364" height="224" rx="8" fill="#fff" stroke="#c9d8d5" stroke-width="3"/><path d="M90 195 L90 110 L200 45 L310 110 L310 195 Z" fill="none" stroke="#168b75" stroke-width="6" stroke-linejoin="round"/><g fill="#fff" stroke="#263c4b" stroke-width="2"><circle cx="90" cy="195" r="11"/><circle cx="90" cy="110" r="11"/><circle cx="200" cy="45" r="11"/><circle cx="310" cy="110" r="11"/><circle cx="310" cy="195" r="11"/></g><g fill="#263c4b"><circle cx="90" cy="195" r="4"/><circle cx="90" cy="110" r="4"/><circle cx="200" cy="45" r="4"/><circle cx="310" cy="110" r="4"/><circle cx="310" cy="195" r="4"/></g></svg>
       <figcaption>Пример фигуры для тренировки. Форма и расположение точек на соревновании будут другими.</figcaption></figure></div>
+    </details>
   </article>
   <article id="explorers" class="challenge">
     <div class="challenge-heading"><h2>🧭 Исследователи</h2><span class="challenge-tag">Ручное управление · 3 минуты</span></div>
     <p>Проведи робота через поле, собери артефакты и доставь их к финишу.</p>
+    <details class="challenge-details"><summary>Открыть задание, схему и ограничения</summary>
     <div class="challenge-grid"><div>
       <h3>Твоё задание</h3>
       <ol><li>Размести на поле зоны старта, хранения и финиша, а также реку и мосты.</li><li>Положи в зоны хранения лёгкие кубики или цилиндры размером до 50 × 50 × 50 мм.</li><li>Управляя роботом с компьютера или планшета, доставь артефакты в зону финиша.</li><li>Верни робота в зону старта до окончания трёх минут.</li></ol>
@@ -66,10 +71,12 @@
     </div><figure>
       <svg viewBox="0 0 400 280" role="img" aria-label="Пример поля с рекой, мостами, стартом, финишем и зонами хранения"><rect x="15" y="15" width="370" height="250" rx="8" fill="#fff" stroke="#c9d8d5" stroke-width="3"/><path d="M180 15 C130 80 250 150 190 265" fill="none" stroke="#9bd7ef" stroke-width="35"/><path d="M142 95 H229 M160 195 H247" stroke="#d8ad6a" stroke-width="25"/><g fill="#e9f6ef" stroke="#168b75" stroke-width="2"><rect x="30" y="195" width="75" height="50" rx="5"/><rect x="285" y="30" width="75" height="50" rx="5"/><rect x="45" y="40" width="65" height="50" rx="5"/><rect x="285" y="180" width="65" height="50" rx="5"/></g><g font-family="sans-serif" font-size="13" fill="#26414b" text-anchor="middle"><text x="67" y="225">СТАРТ</text><text x="322" y="60">ФИНИШ</text><text x="77" y="61">КУБИКИ</text><text x="317" y="201">КУБИКИ</text><text x="190" y="100">МОСТ</text><text x="203" y="200">МОСТ</text></g></svg>
       <figcaption>Упрощённый пример поля. Для тренировки можно менять расположение зон, мостов и предметов.</figcaption></figure></div>
+    </details>
   </article>
   <article id="transport" class="challenge">
     <div class="challenge-heading"><h2>📦 Большая перевозка</h2><span class="challenge-tag">10–14 лет · 5 минут</span></div>
     <p>Создай автономного робота, который сначала проедет по линии, а затем доставит три груза на нужные полки.</p>
+    <details class="challenge-details"><summary>Открыть задание, схему и ограничения</summary>
     <div class="challenge-grid"><div>
       <h3>Твоё задание</h3>
       <ol><li>Собери поле из двух участков: следование по линии и перевозка грузов.</li><li>На первом участке робот должен доехать по линии до финиша. Он же станет стартом второго участка.</li><li>На втором участке робот определяет цвет каждой метки и выбирает соответствующий этаж стеллажа: красный — первый, зелёный — второй, синий — третий.</li><li>Доставь три груза и вернись в зону старта-финиша второго участка.</li></ol>
@@ -79,6 +86,7 @@
     </div><figure>
       <svg viewBox="0 0 400 280" role="img" aria-label="Пример двух участков: линия и доставка грузов к трём стеллажам"><rect x="15" y="15" width="370" height="250" rx="8" fill="#fff" stroke="#c9d8d5" stroke-width="3"/><path d="M45 210 V70 H135 V155 H200 H350 M245 155 V90 M295 155 V90 M345 155 V90" fill="none" stroke="#243b48" stroke-width="5"/><g fill="#edf7f3" stroke="#168b75" stroke-width="2"><rect x="25" y="210" width="55" height="35"/><rect x="175" y="155" width="55" height="35"/><rect x="225" y="35" width="40" height="55"/><rect x="275" y="35" width="40" height="55"/><rect x="325" y="35" width="40" height="55"/></g><circle cx="245" cy="141" r="6" fill="#e34f4f"/><circle cx="295" cy="141" r="6" fill="#39a969"/><circle cx="345" cy="141" r="6" fill="#3989d4"/><g font-family="sans-serif" fill="#26414b" text-anchor="middle" font-size="11"><text x="52" y="232">СТАРТ</text><text x="202" y="178">СТАРТ 2</text><text x="245" y="66">1</text><text x="295" y="66">2</text><text x="345" y="66">3</text><text x="105" y="254">1. ЛИНИЯ</text><text x="290" y="254">2. ПЕРЕВОЗКА</text></g></svg>
       <figcaption>Упрощённый пример: линия ведёт к стеллажам, а цвет метки подсказывает этаж. Схема не в масштабе.</figcaption></figure></div>
+    </details>
   </article>
   <p class="text-muted mt-4">Работайте самостоятельно. Перед соревнованием проверьте актуальные условия у организаторов.</p>
 </div></section>
