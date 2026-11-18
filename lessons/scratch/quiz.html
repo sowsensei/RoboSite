@@ -10,6 +10,24 @@
   <link rel="stylesheet" href="../../css/scratch-catch.css?v=2">
   <style>
     .quiz { max-width: 800px; }
+    .practice-tabs {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #dce3ef;
+    }
+    .practice-tabs button {
+      padding: .55rem .9rem;
+      border: 0;
+      border-bottom: 3px solid transparent;
+      background: transparent;
+      color: var(--text-heading, #25314d);
+      font-weight: 700;
+    }
+    .practice-tabs button[aria-selected="true"] {
+      border-bottom-color: #2459a6;
+      color: #2459a6;
+    }
     .quiz-intro, .quiz-question, .quiz-practice { background: #fff; border: 1px solid #e7e1d8; border-radius: 16px; padding: 1.3rem; margin-bottom: 1rem; }
     .quiz-question legend { float: none; width: auto; font-size: 1.1rem; font-weight: 700; margin-bottom: .8rem; }
     .quiz-options { display: flex; flex-wrap: wrap; gap: .5rem; }
@@ -141,6 +159,11 @@
   <p class="lead">Повтори Scratch и потренируйся решать задачи.</p>
 </div></section>
 <section class="section"><div class="container quiz">
+  <div class="practice-tabs" role="tablist" aria-label="Разделы тренировки">
+    <button id="theory-tab" type="button" role="tab" aria-selected="true" aria-controls="theory-panel">Теория</button>
+    <button id="practice-tab" type="button" role="tab" aria-selected="false" aria-controls="practice-panel" tabindex="-1">Практика</button>
+  </div>
+  <div id="theory-panel" role="tabpanel" aria-labelledby="theory-tab">
   <div class="quiz-intro">
     <p><strong>14 вопросов · один ответ в каждом.</strong> В каждой попытке меняются числа в задачах, набор вопросов по теории и порядок ответов.</p>
     <p class="mb-0">Это тренировка для участников примерно 11 лет, а не задания предстоящей олимпиады: её теоретические вопросы заранее неизвестны.</p>
@@ -161,7 +184,11 @@
   </div>
   </dialog>
   <noscript>Для работы теста включи JavaScript в браузере.</noscript>
-  <section class="quiz-practice">
+  <details class="quiz-practice"><summary><strong>На чём основана тренировка</strong></summary>
+    <p class="mt-3 mb-0">Темы подобраны по <a href="https://robocenter.org/media/filer_public/c9/e3/c9e3ecc6-c467-42a3-b8a7-6c4240bb76d0/reglament_sorevnovanii_scratch.pdf" target="_blank" rel="noopener">примерам заданий для 10–11 лет</a>, <a href="https://meta.wikimedia.org/wiki/Scratch_olympiad/Rules/ru" target="_blank" rel="noopener">правилам другой Scratch-олимпиады</a> и памятке к вашим соревнованиям. Задания теста составлены для тренировки.</p>
+  </details>
+  </div>
+  <section class="quiz-practice" id="practice-panel" role="tabpanel" aria-labelledby="practice-tab" hidden>
     <h2>🎮 Попробуй в Scratch</h2>
     <p>Сыграй в пример, а потом собери свою версию в Scratch.</p>
     <div class="catch-game" id="catch-game">
@@ -197,13 +224,11 @@
     </ol>
     <a href="https://scratch.mit.edu/" target="_blank" rel="noopener">Открыть Scratch ↗</a>
   </section>
-  <details class="quiz-practice"><summary><strong>На чём основана тренировка</strong></summary>
-    <p class="mt-3 mb-0">Темы подобраны по <a href="https://robocenter.org/media/filer_public/c9/e3/c9e3ecc6-c467-42a3-b8a7-6c4240bb76d0/reglament_sorevnovanii_scratch.pdf" target="_blank" rel="noopener">примерам заданий для 10–11 лет</a>, <a href="https://meta.wikimedia.org/wiki/Scratch_olympiad/Rules/ru" target="_blank" rel="noopener">правилам другой Scratch-олимпиады</a> и памятке к вашим соревнованиям. Задания теста составлены для тренировки.</p>
-  </details>
 </div></section>
 <div id="site-footer"></div>
 <script src="../../js/scratch-quiz.js?v=10"></script>
-<script src="../../js/scratch-catch.js?v=2"></script>
+<script src="../../js/scratch-catch.js?v=3"></script>
+<script src="../../js/scratch-training-tabs.js"></script>
 <script src="/js/main.js"></script>
 </body>
 </html>

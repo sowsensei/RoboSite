@@ -81,6 +81,10 @@
 
   function tick(time) {
     if (state !== 'playing') return;
+    if (!stage.clientWidth) {
+      setState('paused');
+      return;
+    }
     const elapsed = lastTime === null ? 0 : Math.min((time - lastTime) / 1000, .05);
     lastTime = time;
     const direction = Number(pressed.has('ArrowRight')) - Number(pressed.has('ArrowLeft'));
