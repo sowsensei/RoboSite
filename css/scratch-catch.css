@@ -1,0 +1,103 @@
+.catch-game {
+  margin: 1rem 0;
+  border: 1px solid #cdd9f3;
+  border-radius: 14px;
+  background: #f4f7ff;
+  color: #20385f;
+}
+
+.catch-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+  padding: .75rem 1rem;
+}
+
+.catch-toolbar h3 { margin: 0; font-size: 1.15rem; font-weight: 750; }
+.catch-toolbar p { margin: 0; }
+.catch-counters { display: flex; flex-wrap: wrap; gap: .4rem; }
+.catch-score {
+  border-radius: 999px;
+  padding: .2rem .7rem;
+  background: #fff;
+  white-space: nowrap;
+}
+.catch-score strong { margin-left: .25rem; font-variant-numeric: tabular-nums; }
+.catch-score-misses { background: #fff1e9; color: #83391d; }
+.catch-mode {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem .7rem;
+  padding: 0 1rem .75rem;
+  font-size: .875rem;
+  font-weight: 700;
+}
+.catch-mode select {
+  min-width: 0;
+  max-width: 100%;
+  padding: .3rem;
+  border: 1px solid #cdd9f3;
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+  font-weight: 400;
+}
+
+.catch-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 5 / 2;
+  min-height: 170px;
+  background:
+    radial-gradient(ellipse at 18% 28%, #fffd 0 8%, transparent 8.5%),
+    radial-gradient(ellipse at 82% 38%, #fffd 0 9%, transparent 9.5%),
+    linear-gradient(#cee5ff, #edf9ff 90%, #bde8cc 90%);
+}
+
+.catch-stage[data-playing] { touch-action: none; cursor: ew-resize; }
+.catch-stage:focus-visible { outline: 3px solid #294baf; outline-offset: -3px; }
+
+.catch-star, .catch-player {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.catch-star { left: 50%; top: 20%; font-size: clamp(1.3rem, 4vw, 2.3rem); }
+.catch-player { left: 50%; top: 88%; font-size: clamp(2rem, 6vw, 3rem); }
+
+.catch-result {
+  position: absolute;
+  z-index: 1;
+  inset: 50% auto auto 50%;
+  width: max-content;
+  max-width: 90%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: .65rem 1rem;
+  border-radius: 10px;
+  background: #fff;
+  color: #21543a;
+  font-weight: 750;
+  text-align: center;
+}
+.catch-result[data-lost] { color: #83391d; }
+
+.catch-footer { justify-content: flex-start; }
+.catch-footer p { flex: 1 1 13rem; font-size: .875rem; }
+.catch-footer button {
+  border: 0;
+  border-radius: 8px;
+  padding: .5rem .85rem;
+  background: #294baf;
+  color: #fff;
+  font-weight: 700;
+}

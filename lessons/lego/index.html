@@ -8,6 +8,22 @@
   <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../css/style.css?v=16">
+  <style>
+    @media (min-width: 992px) {
+      .lego-section {
+        display: grid;
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 1.5rem;
+        align-items: start;
+      }
+      .lego-section .section-title { margin-bottom: 0.75rem; }
+      .lego-section .lessons-list { width: 100%; }
+    }
+    .lego-section + .lego-section {
+      border-top: 2px solid var(--sand-300);
+      padding-top: 1.5rem;
+    }
+  </style>
 </head>
 <body>
 <div id="site-header"></div>
@@ -21,54 +37,61 @@
       <div class="title-line">
         <h1>🤖 LEGO EV3</h1>
       </div>
-      <div class="header-actions">
-        <a href="theory.html" class="btn-theory-link">📚 Теория и материалы →</a>
-      </div>
     </div>
-    <p class="lead">Сборка и программирование роботов из наборов LEGO Mindstorms EV3. Выбери свой набор и открой инструкции по сборке.</p>
+    <p class="lead">Собираем и программируем роботов LEGO Mindstorms EV3.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
 
-    <h2 class="section-title">Наборы</h2>
-    <p class="text-muted mb-4">Выбери набор, с которым работаешь на занятии.</p>
+    <div class="lego-section">
+    <div>
+      <h2 class="section-title">Наборы</h2>
+      <p class="text-muted mb-4">Выбери свой набор.</p>
+    </div>
 
     <div class="lessons-list">
 
       <a href="base.html" class="lessons-card" style="border-left-color:#e63946;">
-        <div class="lesson-card-num" style="background:#e63946; font-size:1rem;">45544</div>
         <div class="lessons-card-body">
           <div class="lessons-card-title">Базовый набор</div>
-          <div class="lessons-card-sub">LEGO Mindstorms EV3 (45544)</div>
-          <div class="lessons-card-meta">8 моделей · начальный уровень</div>
+          <div class="lessons-card-sub">45544</div>
         </div>
         <div class="lessons-card-arrow">→</div>
       </a>
 
       <a href="dual.html" class="lessons-card" style="border-left-color:#7b2d8b;">
-        <div class="lesson-card-num" style="background:#7b2d8b; font-size:0.7rem; text-align:center; line-height:1.2;">45544<br>+<br>45560</div>
         <div class="lessons-card-body">
           <div class="lessons-card-title">Расширенный набор</div>
-          <div class="lessons-card-sub">Базовый + дополнительный (45544 + 45560)</div>
-          <div class="lessons-card-meta">5 моделей · продвинутый уровень</div>
+          <div class="lessons-card-sub">45544 + 45560</div>
         </div>
         <div class="lessons-card-arrow">→</div>
       </a>
 
     </div>
+    </div>
 
-    <div class="mt-5">
+    <div class="lego-section mt-4">
+      <h2 class="section-title">Теория и материалы</h2>
+      <div class="lessons-list">
+        <a href="../../content/lego-ev3/theory/Mastering_LEGO_EV3.pdf" class="lessons-card" style="border-left-color:#e63946;" target="_blank" rel="noopener">
+          <div class="lesson-card-num" style="background:#fde9e9;" aria-hidden="true">📖</div>
+          <div class="lessons-card-body">
+            <div class="lessons-card-title">Mastering LEGO EV3</div>
+            <div class="lessons-card-meta">PDF</div>
+          </div>
+          <div class="lessons-card-arrow">↗</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="lego-section mt-4">
     <h2 class="section-title">Подготовка к соревнованиям</h2>
-    <p class="text-muted mb-4">Выбери задачу, собери робота и проверь его на поле.</p>
     <div class="lessons-list">
       <a href="challenges.html" class="lessons-card" style="border-left-color:#168b75;">
-        <div class="lesson-card-num" style="background:#168b75; font-size:1.4rem;">🏁</div>
         <div class="lessons-card-body">
           <div class="lessons-card-title">Робот на задании</div>
-          <div class="lessons-card-sub">Чертёжник, исследователи и большая перевозка</div>
-          <div class="lessons-card-meta">3 задачи · схемы полей и условия</div>
         </div>
         <div class="lessons-card-arrow">→</div>
       </a>
